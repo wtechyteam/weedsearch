@@ -1,0 +1,830 @@
+// Override Bootstrap variables
+@import './mixins.scss';
+// Import Bootstrap SCSS file from react-bootstrap
+@import '~bootstrap/scss/bootstrap';
+/******Custom Utility CSS Start*******/
+.logo_title {
+    box-shadow: none !important;
+    margin-bottom: 25px;
+  }
+  .text {
+    &-12 {
+      font-size: 12px;
+    }
+  
+    &-18 {
+      font-size: 18px;
+  
+      @media (max-width: 1400px) {
+        font-size: 17px;
+      }
+  
+      @media (max-width: 1200px) {
+        font-size: 15px;
+      }
+    }
+  
+    &-20 {
+      font-size: 20px;
+  
+      @media (max-width: 1400px) {
+        font-size: 18px;
+      }
+  
+      @media (max-width: 1200px) {
+        font-size: 16px;
+      }
+    }
+  
+  }
+  
+  
+  .title {
+  
+    &-sm {
+      font-size: 20px;
+      letter-spacing: .5px;
+  
+  
+      @media (max-width: 1200px) {
+        font-size: 18px;
+      }
+  
+    }
+  
+    &-md {
+      font-size: 25px;
+      letter-spacing: .5px;
+  
+      @media (max-width: 1200px) {
+        font-size: 22px;
+      }
+  
+      @media (max-width: 767.98px) {
+        font-size: 20px;
+      }
+    }
+  
+    &-xl {
+      font-size: 42px;
+      letter-spacing: .5px;
+  
+      @media (max-width: 1400px) {
+        font-size: 40px;
+      }
+  
+      @media (max-width: 1200px) {
+        font-size: 36px;
+      }
+  
+      @media (max-width: 767.98px) {
+        font-size: 28px;
+      }
+  
+      @media (max-width: 576.98px) {
+        font-size: 26px;
+      }
+    }
+  
+    &-xxl {
+      font-size: 60px;
+  
+      @media (max-width: 1400px) {
+        font-size: 55px;
+      }
+  
+      @media (max-width: 1200px) {
+        font-size: 50px;
+      }
+  
+      @media (max-width: 767.98px) {
+        font-size: 45px;
+      }
+    }
+  }
+  
+  .color-primary {
+    color: var(--primary);
+  }
+  
+  .color-secondary {
+    color: var(--secondary);
+  }
+  
+  .bg-gray {
+    background-color: var(--bg-color1);
+  }
+  
+  .bg-gray2 {
+    background-color: var(--bg-color2);
+  }
+  
+  .dBtn {
+    font-size: 16px;
+    padding: 12px 25px;
+    border: none;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: all 0.5s ease-in-out;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 160px;
+    text-decoration: none;
+  
+    &.hasShadow {
+      box-shadow: 2px 2px 10px 0px #00000050;
+    }
+  
+    &.disabled {
+      opacity: .5;
+      pointer-events: none;
+    }
+  
+    &.btnPrimary {
+  
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #fff;
+      border-radius: 10px 0px 10px 0px;
+      min-height: 56px;
+  
+      &:hover {
+        background: #fff;
+        color: var(--primary);
+        border-radius: 0px 10px 0px 10px;
+      }
+    }
+    &.btnSecondary {
+        border: 1px solid var(--secondary);
+        background: var(--secondary);
+        color: #fff;
+        border-radius: 10px 0px 10px 0px;
+        min-height: 56px;
+    
+        &:hover {
+          background: #fff;
+          color: var(--secondary);
+          border-radius: 0px 10px 0px 10px;
+        }
+      }
+    
+      &.btnBorder {
+        background: transparent;
+        border: 2px solid var(--secondary);
+        color: var(--secondary);
+        border-radius: 10px 0px 10px 0px;
+        min-height: 56px;
+    
+        &:hover {
+          background: var(--secondary);
+          color: #fff;
+          border-radius: 0px 10px 0px 10px;
+        }
+      }
+    
+      &.btnText {
+        background: transparent;
+        padding: 0;
+        min-width: auto;
+        color: var(--secondary);
+    
+        &:hover {
+          color: #000;
+          letter-spacing: 1px;
+        }
+      }
+    
+      &.btnSmall {
+        min-width: 120px;
+        font-size: 14px;
+        padding: 5px 15px;
+        min-height: 40px;
+      }
+    
+      svg {
+        font-size: 22px;
+      }
+    }
+    
+    .sectionPadding {
+      padding: 100px 0px;
+      scroll-margin-top: 100px;
+    
+      @media (max-width: 1200px) {
+        padding: 80px 0px;
+      }
+    }
+    .sectionInfo {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .section-title-sm {
+        color: #2e8585;
+        font-weight: 600;
+        text-transform: capitalize;
+        letter-spacing: 0.5px;
+        border-width: 0px 0px 2px 0px;
+        border-style: dashed;
+        display: inline-block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        font-size: 20px;
+      
+        @media (max-width: 1200px) {
+          font-size: 18px;
+        }
+      }
+      
+      .cardType1 {
+        @include cardType1;
+      }
+      
+      .cardType2 {
+        @include cardType2;
+      }
+      
+      .cardType3 {
+        @include cardType1;
+      
+      }
+      
+      
+      .cardIcon-Type1 {
+        @include cardIcon-Type1;
+      }
+      
+      .cardIcon-Type2 {
+        @include cardIcon-Type2;
+      }
+      
+      
+      .cardIndexNumber {
+        position: absolute;
+        font-size: 80px;
+        font-weight: 800;
+        opacity: .2;
+        color: var(--primary);
+        right: 10px;
+        top: 5px;
+        min-width: 60px;
+        line-height: 1;
+      }
+      
+      .cardHoverEffect {
+        &:hover {
+          background-color: var(--secondary);
+          color: #fff;
+      
+          .icon {
+            &::before {
+              background-color: var(--bg-color1);
+            }
+      
+            img {
+              filter: invert(1);
+            }
+          }
+      
+          .cardIndexNumber {
+            color: #f5f5f5;
+          }
+      
+          .title-md {
+            color: #fff;
+          }
+        }
+      }
+      
+      .green_text {
+        color: #2e8585;
+        font-weight: 600;
+      }
+      
+      .hasShadow {
+        box-shadow: 0px 0px 10px 0px #00000025;
+      }
+      
+      .border_radius {
+        border-radius: 10px;
+      }
+      
+      .green_pointer {
+        cursor: pointer;
+        transition: all 0.4s;
+      
+        &:hover {
+          color: #2e8585
+        }
+      }
+      
+      .category {
+        font-size: 12px;
+        font-weight: 500;
+        color: #fff;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 22;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        p {
+          background: var(--primary);
+          padding: 5px 15px;
+          border-radius: 15px;
+          min-width: 55px;
+          text-align: center;
+        }
+      }
+      
+      
+      .modal-content{
+        width: calc(100% - 30px);
+        margin: 0 auto;
+      }
+      /******Custom Utility CSS End*******/
+      
+      
+      /*****Inner Page Banner Css Start*****/
+      
+      .innerBanner {
+        padding: 250px 0px 100px;
+        background-image: linear-gradient(180deg, #f5f5f5 0%, rgba(59, 137, 210, 0.4745098039) 100%);
+        border-radius: 0px 0px 120px 120px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 0px 15px 10px #00000025;
+      
+        @media (max-width: 1400px) {
+          border-radius: 0px 0px 100px 100px;
+        }
+      
+        @media (max-width: 991.98px) {
+          padding: 200px 0px 100px;
+          border-radius: 0px 0px 50px 50px;
+        }
+      
+        @media (max-width: 767.98px) {
+          padding: 180px 0px 80px;
+          border-radius: 0px 0px 30px 30px;
+        }
+      
+        &::before {
+          content: "";
+          background-image: url(./../images/rocket.svg);
+          width: 300px;
+          height: 300px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          right: -35px;
+          bottom: -35px;
+          background-position: right bottom;
+          filter: invert(1);
+      
+          @media (max-width: 991.98px) {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+/***********Inner Page Banner Css Start************/
+
+.postCard {
+    @include postCard
+  }
+  
+  .slick-slide {
+    div {
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+  
+  /*********************/
+  
+  .fullWidthCTA {
+    background-image: url(./../images/call2Action2.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+  
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #000;
+      opacity: .6;
+    }
+  }
+  
+  /***************/
+  .faqWrapper {
+    grid-gap: 15px;
+    display: grid;
+  
+    .faqWrap {
+      position: relative;
+      box-shadow: 0px 0px 3px 2px #00000015;
+      border-radius: 5px;
+      overflow: hidden;
+  
+      .title {
+        padding: 15px 40px 15px 15px;
+        cursor: pointer;
+        transition: all ease-in-out .3s;
+        position: relative;
+        background-color: #fff;
+  
+        &:hover,
+        &.active {
+          background-color: var(--bg-color2);
+        }
+  
+        .faqIcon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 15px;
+          color: var(--secondary);
+        }
+      }
+  
+      .description {
+        padding: 15px;
+        background-color: #fff;
+      }
+    }
+  }
+  
+  
+  /******Contact-us page css start*******/
+  
+  .mapSection {
+    line-height: 0;
+    background-color: var(--bg-color2);
+    width: 520px;
+    height: 400px;
+  }
+  .mapSection2{
+    line-height: 0;
+    background-color: var(--bg-color2);
+  }
+  
+  /******Contact-us page css end*******/
+  
+  /******Portfolio page css start*******/
+  .portfolioWrapper,
+  .servicesWrapper {
+    section {
+      &:nth-child(even) {
+        background-color: var(--bg-color2);
+  
+        // .row {
+        //   flex-direction: row-reverse;
+        // }
+      }
+  
+      img {
+        box-shadow: 0px 0px 10px 2px #00000025;
+      }
+    }
+  }
+  
+  /******Portfolio page css end*******/
+  
+  /******Error Page css start*******/
+  .errorPage {
+    background-image: linear-gradient(180deg, #f5f5f5, rgba(59, 137, 210, .475));
+    padding: 200px 0px 80px;
+  
+    img {
+      filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+    }
+  
+  }
+  
+  /******Error Page css end*******/
+  
+  /******Career Page css start*******/
+  .jobList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    list-style: none;
+    padding: 0;
+  
+    @media (max-width: 991.98px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @media (max-width: 576.98px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .jobWrap {
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, .09);
+      position: relative;
+      background-color: #fff;
+      cursor: pointer;
+      transition: all ease-in-out .3s;
+  
+      .content {
+        position: relative;
+        padding: 25px;
+        display: block;
+        color: #000;
+        text-decoration: none;
+        transition: all ease-in-out .3s;
+      }
+  
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+  
+        .content {
+          filter: invert(1);
+        }
+      }
+  
+      &::before {
+        content: "";
+        width: 5px;
+        height: 100%;
+        background: var(--secondary);
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        border-radius: 0 4px 4px 0;
+        transition: all ease-in-out .3s;
+      }
+  
+      p {
+        svg {
+          margin-right: 5px;
+        }
+  
+        margin-bottom: 10px;
+      }
+  
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px;
+        align-items: center;
+  
+        li {
+          margin-right: 15px;
+  
+          svg {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  
+  
+  
+  .jobInfoWrap {
+    margin-top: 50px;
+    scroll-margin-top: 120px;
+    position: relative;
+  
+    .job {
+      &-experience {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        padding: 10px 0;
+        background: var(--secondary);
+        color: #fff;
+  
+        h5 {
+          font-size: 40px;
+          padding: 0 5px;
+          color: #fff;
+          font-weight: bold
+        }
+  
+        p {
+          font-size: 13px;
+          border-top: 1px solid #549b93;
+          padding: 5px 5px 0;
+          font-weight: 600;
+        }
+      }
+  
+      &-content {
+        background-color: #f5f5f5;
+        padding: 35px 15px;
+  
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+  
+            &::before {
+              content: "\f00c";
+              font-family: "FontAwesome";
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+  
+        h4 {
+          font-size: 22px;
+          text-transform: capitalize;
+          margin-top: 35px;
+  
+          &:first-child {
+            margin-top: 0px;
+          }
+        }
+      }
+  
+      &-title {
+        font-size: 25px;
+      }
+    }
+  
+    .paddingLeft {
+      padding-left: 120px;
+    }
+  }
+  
+  /******Career Page css end*******/
+  
+  .popupClose {
+    position: absolute;
+    border-radius: 50%;
+    right: -20px;
+    top: -20px;
+    width: 45px;
+    height: 45px;
+    min-width: auto;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .09);
+    padding: 0;
+  
+    @media (max-width:578px) {
+      right: 0px;
+      top:0px;
+      width: 35px;
+    height: 35px;
+    }
+  
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  
+    svg {
+      font-size: 25px;
+    }
+  }
+  .video_popup{
+    width: 100%;
+    height: 420px;
+    @media (max-width:576.98px) {
+      height: 300px;
+    }
+  
+  }
+  
+  // **********************Loading-page start*********************
+  .loading_page {
+    width: 100%;
+    height: 100vh;
+    background-color: #3b3b3b2d;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    backdrop-filter: blur(3px);
+    z-index: 2;
+  }
+  
+  .loading_text {
+    color: #fff;
+    font-weight: bold;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+  }
+  
+  .loading_section_text {
+    font-weight: bold;
+    z-index: 2;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 1000px;
+    height: 250px;
+    margin: 40px auto;
+    flex-direction: column;
+    background-color: #adadad2d;
+    backdrop-filter: blur(3px);
+  
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 10px;
+      color: var(--primary);
+    }
+  }
+  
+  // **********************Loading-page-end***********************
+  .post-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .sideBarWrapper {
+    position: sticky;
+    top: 120px;
+    .wrap{
+      background-color: var(--bg-color2);
+      padding: 25px 25px;
+      border-top: 5px solid var(--secondary);
+      margin-bottom: 25px;
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+          padding: 15px 0px;
+          border-bottom: 1px solid #aaaaaa;
+          &:last-child{
+            border:none;
+            padding-bottom: 0;
+          }
+          a{
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            grid-gap: 10px;
+            align-items: center;
+            &:hover{
+              color: var(--secondary);
+            }
+            img {
+              height: 80px;
+              object-fit: cover;
+              width: 100%;
+              border: 1px solid #ddd;
+              box-shadow: 0px 0px 5px 0px #00000015;
+            }
+          }
+  
+        }
+      }
+    }
+  }
+  .content_side_image{
+    // height: auto;
+    width: 100%;
+    max-height: 480px;
+    max-width: 580px;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.24) 0px 3px 4px);
+  }
+  
+  
+
+      
