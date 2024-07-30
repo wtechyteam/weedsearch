@@ -7,7 +7,7 @@ router.post('/login', async (req, res) => {
 
   try {
     const token = await User.matchPasswordAndGenerateToken(email, password);
-    console.log('Generated token:', token);
+   
     res.cookie('authToken', token, { httpOnly: true });
     res.status(200).json({ message: 'Login successful', token });
   } catch (error) {
