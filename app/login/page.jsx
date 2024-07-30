@@ -55,7 +55,7 @@ const Login = () => {
       </div>
 
       {/* Right side div */}
-      <div className="w-full md:w-1/2 h-full bg-[#f5f5f5] flex flex-col p-6 md:p-12 lg:p-20 justify-between items-center">
+      <div className="w-full md:w-1/2 h-full bg-white flex flex-col p-6 md:p-12 lg:p-20 justify-between items-center">
         <div className="text-lg md:text-xl max-w-[500px] text-[#060606] font-bold">
           <Image
             src={rb1}
@@ -118,16 +118,16 @@ const Login = () => {
                   </p>
                 </div>
                 <div className="flex flex-wrap justify-center gap-12 md:gap-2">
-                  <button className="w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
+                  <button className="md:w-10 md:h-10 w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
                     <FontAwesomeIcon icon={faGoogle} size="2x" />
                   </button>
-                  <button className="w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
+                  <button className="md:w-10 md:h-10 w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
                     <FontAwesomeIcon icon={faApple} size="2x" />
                   </button>
-                  <button className="w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
+                  <button className="md:w-10 md:h-10 w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
                     <FontAwesomeIcon icon={faFacebook} size="2x" />
                   </button>
-                  <button className="w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
+                  <button className="md:w-10 md:h-10 w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
                     <FontAwesomeIcon icon={faMicrosoft} size="2x" />
                   </button>
                 </div>
