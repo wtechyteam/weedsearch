@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome</h1>
+    <div className='center'>
+      <h1 >Welcome</h1>
       <Link href="/login" legacyBehavior>
         <a>Login</a>
       </Link>

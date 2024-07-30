@@ -12,6 +12,15 @@
   --bg-color2: #efefef;
 }
 
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
+}
+
 
 html {
   scroll-behavior: smooth;
