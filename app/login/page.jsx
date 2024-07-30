@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='center'>
       <div>
         <label>Email:</label>
         <input
