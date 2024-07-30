@@ -28,7 +28,7 @@ const HomeLanding = () => {
   return (
     <div className='center'>
       <h1>Welcome, {user.fullName || 'User'}</h1>
-      <p>If you landed here, this means you've successfully logged in.</p>
+      <p>If you landed here, this means you have successfully logged in.</p>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
