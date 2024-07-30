@@ -1,7 +1,7 @@
-'use client'
-import { useState } from 'react';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import rb from "./../../public/assets/images/top-tips-weed-header-shutterstock-marijuana-bud-flowers-cannabis-grinder-shredded-1071065351-scaled.jpg";
@@ -11,30 +11,29 @@ import {
   faFacebook,
   faMicrosoft,
 } from "@fortawesome/free-brands-svg-icons";
-import Link from 'next/link';
+import Link from "next/link";
 import rb1 from "./../../public/assets/images/logo.png";
 
-
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5002/api/login', {
+      const response = await axios.post("http://localhost:5002/api/login", {
         email,
         password,
       });
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      alert('Login successful!');
-      router.push('/homeLanding'); // Redirect to home page after login
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+      alert("Login successful!");
+      router.push("/homeLanding"); // Redirect to home page after login
     } catch (error) {
-      console.error('Login error:', error.response?.data?.message);
-      setError(error.response?.data?.message || 'Invalid credentials');
+      console.error("Login error:", error.response?.data?.message);
+      setError(error.response?.data?.message || "Invalid credentials");
     }
   };
 
@@ -46,18 +45,18 @@ const Login = () => {
           <Image src={rb} className="w-full h-full object-cover" alt="login" />
         </div>
         <div className="absolute top-1/4 left-10 md:top-1/4 md:left-[15%] flex flex-col">
-          <h1 className="text-3xl md:text-4xl text-white font-bold">
-            Test Heading
+          <h1 className="text-4xl md:text-4xl text-white font-bold">
+          Elevate Your Experience
           </h1>
-          <p className="text-lg md:text-xl text-white font-normal">
-            Login for free and get exciting offers
+          <p className="text-xl md:text-xl text-white font-normal">
+          Log In to Explore Premium Strains!
           </p>
         </div>
       </div>
- 
+
       {/* Right side div */}
       <div className="w-full md:w-1/2 h-full bg-[#f5f5f5] flex flex-col p-6 md:p-12 lg:p-20 justify-between items-center">
-      <div className="text-lg md:text-xl max-w-[500px] text-[#060606] font-bold">
+        <div className="text-lg md:text-xl max-w-[500px] text-[#060606] font-bold">
           <Image
             src={rb1}
             alt="logo"
@@ -98,15 +97,20 @@ const Login = () => {
                   Forgot Password?
                 </p>
               </div>
-              {error && <p style={{ color: 'red' }}>{error}</p>}
+              {error && <p style={{ color: "red" }}>{error}</p>}
               <div className="w-full flex flex-col my-2 md:my-4">
-                <button className="w-full my-2 text-white bg-[#060606] font-semibold rounded-md p-2 text-base md:p-3 md:text-lg text-center flex items-center justify-center cursor-pointer" type="submit">
+                <button
+                  className="w-full my-2 text-white bg-[#060606] font-semibold rounded-md p-3 text-base md:p-3 md:text-lg text-center flex items-center justify-center cursor-pointer"
+                  type="submit"
+                >
                   Log In
                 </button>
-                <button className="w-full my-2 text-[#060606] font-semibold bg-white border-2 border-black rounded-md p-2 text-base md:p-3 md:text-lg text-center flex items-center justify-center">
-                  <Link href={`/signup`}>Sign Up</Link>
+                <button className="w-full my-2 text-[#060606] font-semibold bg-white border-2 border-black rounded-md p-3 text-base md:p-3 md:text-lg text-center flex items-center justify-center">
+                  <Link href={`/signup`} className="no-underline text-black">
+                    Sign Up
+                  </Link>
                 </button>
- 
+
                 <div className="w-full flex items-center justify-center relative py-2">
                   <div className="w-full h-[1px] my-4 bg-black"></div>
                   <p className="text-lg absolute my-2 text-black/80 bg-[#f5f5f5]">
@@ -142,7 +146,6 @@ const Login = () => {
       </div>
     </div>
   );
-
 };
 
 export default Login;

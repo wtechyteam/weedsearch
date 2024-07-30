@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import rb from "./../../public/assets/images/top-tips-weed-header-shutterstock-marijuana-bud-flowers-cannabis-grinder-shredded-1071065351-scaled.jpg";
+import rb from "./../../public/assets/images/photo-1498671546682-94a232c26d17.avif";
 import {
   faGoogle,
   faApple,
@@ -49,10 +49,10 @@ const Signup = () => {
         </div>
         <div className="absolute top-1/4 left-10 md:top-1/4 md:left-[15%] flex flex-col">
           <h1 className="text-3xl md:text-4xl text-white font-bold">
-            Test Heading
+          Elevate Your Search
           </h1>
           <p className="text-lg md:text-xl text-white font-normal">
-            Login for free and get exciting offers
+          Sign Up to Access Premium Strain Info!
           </p>
         </div>
       </div>
@@ -109,11 +109,11 @@ const Signup = () => {
               </div>
               {error && <p style={{ color: 'red' }}>{error}</p>}
               <div className="w-full flex flex-col my-2 md:my-4">
-                <button className="w-full my-2 text-white bg-[#060606] font-semibold rounded-md p-2 text-base md:p-3 md:text-lg text-center flex items-center justify-center cursor-pointer" type="submit">
+                <button className="w-full my-2 text-white bg-[#060606] font-semibold rounded-md p-3 text-base md:p-3 md:text-lg text-center flex items-center justify-center cursor-pointer" type="submit">
                   Sign Up
                 </button>
-                <button className="w-full my-2 text-[#060606] font-semibold bg-white border-2 border-black rounded-md p-2 text-base md:p-3 md:text-lg text-center flex items-center justify-center">
-                  <Link href={`/login`}>Log In</Link>
+                <button className="w-full my-2 text-[#060606] font-semibold bg-white border-2 border-black rounded-md p-3 text-base md:p-3 md:text-lg text-center flex items-center justify-center">
+                  <Link href={`/login`} className="no-underline text-black">Log In</Link>
                 </button>
  
                 <div className="w-full flex items-center justify-center relative py-2">
