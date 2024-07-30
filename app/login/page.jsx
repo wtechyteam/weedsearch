@@ -117,7 +117,7 @@ const Login = () => {
                     Log in with
                   </p>
                 </div>
-                <div className="flex flex-wrap justify-center gap-16 md:gap-4">
+                <div className="flex flex-wrap justify-center gap-12 md:gap-2">
                   <button className="w-12 h-12 text-[#060606] font-semibold bg-white border-2 border-black rounded-full text-center flex items-center justify-center text-xs md:w-16 md:h-16 md:text-base">
                     <FontAwesomeIcon icon={faGoogle} size="2x" />
                   </button>
