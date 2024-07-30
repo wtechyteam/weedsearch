@@ -1,10 +1,8 @@
-// Import dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
-
 
 // Initialize Express app
 const app = express();
@@ -15,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1')
-  .then((err) => console.log("mongoDB connected"))
+mongoose.connect('mongodb://127.0.0.1/WeedSearch')
+  .then(() => console.log("MongoDB connected"))
   .catch(err => console.error(err));
 
 // Simple route
@@ -25,8 +23,10 @@ app.get('/', (req, res) => {
 });
 
 // Import routes
-// const users = require('./routes/users');
-// app.use('/api/users', users);
+const signupRoute = require('./api/signup');
+const loginRoute = require('./api/login'); // Add this line
+app.use('/api', signupRoute);
+app.use('/api', loginRoute); // Add this line
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -34,14 +34,6 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-// Serve static assets if in production
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static('client/build'));
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
-// }
-
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
