@@ -113,7 +113,7 @@ const Login = () => {
 
                 <div className="w-full flex items-center justify-center relative py-2">
                   <div className="w-full h-[1px] my-4 bg-black"></div>
-                  <p className="text-lg absolute my-2 text-black/80 bg-[#f5f5f5]">
+                  <p className="text-lg absolute my-2 text-black/80 bg-white">
                     Log in with
                   </p>
                 </div>
