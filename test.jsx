@@ -1,46 +1,4 @@
-'use client'
-import { useState } from 'react';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import rb from "./../../public/assets/images/top-tips-weed-header-shutterstock-marijuana-bud-flowers-cannabis-grinder-shredded-1071065351-scaled.jpg";
-import {
-  faGoogle,
-  faApple,
-  faFacebook,
-  faMicrosoft,
-} from "@fortawesome/free-brands-svg-icons";
-import Link from 'next/link';
-import rb1 from "./../../public/assets/images/logo.png";
-
-const Signup = () => {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const router = useRouter();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(''); // Clear any previous error
-    try {
-      const response = await axios.post('http://localhost:5002/api/signup', {
-        fullName,
-        email,
-        password,
-      });
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      alert('Signup successful!');
-      router.push('/homeLanding'); // Redirect to home page after signup
-    } catch (error) {
-      console.error('Signup error:', error.response?.data?.message);
-      setError(error.response?.data?.message || 'Error during signup');
-    }
-  };
-
-  return (
+return (
     <div className="w-full h-screen flex flex-col md:flex-row">
       {/* Left side div for large screens and top div for small screens */}
       <div className="w-full h-[60vh] md:w-1/2 md:h-full relative flex-shrink-0">
@@ -59,15 +17,9 @@ const Signup = () => {
  
       {/* Right side div */}
       <div className="w-full md:w-1/2 h-full bg-[#f5f5f5] flex flex-col p-6 md:p-12 lg:p-20 justify-between items-center">
-      <div className="text-lg md:text-xl max-w-[500px] text-[#060606] font-bold">
-          <Image
-            src={rb1}
-            alt="logo"
-            width={150}
-            height={150}
-            className="w-18 h-18 md:w-40 md:h-36 rounded-full"
-          />
-        </div>
+        <h1 className="text-lg md:text-xl max-w-[500px] text-[#060606] font-bold">
+          Brand Name
+        </h1>
         <div className="w-full flex flex-col max-w-[500px]">
           <div className="w-full flex flex-col mb-6">
             <h3 className="text-2xl md:text-3xl font-semibold mb-2">SignUp</h3>
@@ -151,6 +103,3 @@ const Signup = () => {
       </div>
     </div>
   );
-};
-
-export default Signup;

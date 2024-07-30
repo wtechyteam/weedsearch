@@ -25,8 +25,10 @@ app.get('/', (req, res) => {
 // Import routes
 const signupRoute = require('./api/signup');
 const loginRoute = require('./api/login'); // Add this line
+const logoutRoute = require('./api/logout');
 app.use('/api', signupRoute);
 app.use('/api', loginRoute); // Add this line
+app.use('/api', logoutRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

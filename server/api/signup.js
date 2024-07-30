@@ -16,7 +16,7 @@ router.post('/signup', async (req, res) => {
 
     const token = await User.matchPasswordAndGenerateToken(email, password);
     res.cookie('authToken', token, { httpOnly: true });
-    res.status(201).json({ message: 'User created successfully', token });
+    res.status(201).json({ message: 'User created successfully', token, user: { fullName: newUser.fullName, email: newUser.email } });
   } catch (error) {
     res.status(500).json({ message: 'Error creating user', error: error.message });
   }

@@ -45,20 +45,29 @@ userSchema.pre('save', function (next) {
   next();
 });
 
-userSchema.static('matchPasswordAndGenerateToken', async function (email, password) {
-  const user = await this.findOne({ email });
-  if (!user) throw new Error('User not found');
-
-  const userProvidedHash = createHmac('sha256', user.salt)
+// Define instance method to compare password
+userSchema.methods.comparePassword = function (password) {
+  const userProvidedHash = createHmac('sha256', this.salt)
     .update(password)
     .digest('hex');
 
+  return this.password === userProvidedHash;
+};
 
-  if (user.password !== userProvidedHash) throw new Error('Incorrect credentials');
+// Define instance method to generate auth token
+userSchema.methods.generateAuthToken = function () {
+  return createTokenForUser(this);
+};
+
+userSchema.statics.matchPasswordAndGenerateToken = async function (email, password) {
+  const user = await this.findOne({ email });
+  if (!user) throw new Error('User not found');
+
+  if (!user.comparePassword(password)) throw new Error('Incorrect credentials');
 
   const token = createTokenForUser(user);
-  return token;
-});
+  return { token, user };
+};
 
 const User = model('User', userSchema);
 
